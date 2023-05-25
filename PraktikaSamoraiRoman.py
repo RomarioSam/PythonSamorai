@@ -3,23 +3,19 @@
 
 
 
-c = a = float(input("Первое: "))
-d = b = float(input("Второе: "))
-while b%1 != 0 or b < 1:
+a = float(input("Первое: "))
+b = float(input("Второе: "))
+while b % 1 != 0 or b < 1:
     b = float(input("Второе число должно быть целым и положительным! Повторите попытку: "))
-d = b = int(b)
+b = int(b)
 
 
-def pr(A, B, C, D):
-    if B == 1:
-        print(f"{A} в степени {D} = {C}")
-        return
-    C = C * A
-    B -= 1
-    pr(A, B, C, D)
+def pr(a, b):
+    if b == 1:
+        return a
+    return a * pr(a, b - 1)
 
-
-pr(a, b, c, d)
+print(pr(a, b))
 
 
 
@@ -28,18 +24,14 @@ pr(a, b, c, d)
 
 
 
-X = float(input("Первое число: "))
-while X%1 != 0 or X < 0: X = float(input("Число должно быть целое и неотрицательное! Повторите попытку: "))
-Y = float(input("Второе число: "))
-while Y%1 != 0 or Y < 0: Y = float(input("Число должно быть целое и неотрицательное! Повторите попытку: "))
+x = float(input("Первое число: "))
+while x%1 != 0 or x < 0: x = float(input("Число должно быть целое и неотрицательное! Повторите попытку: "))
+y = float(input("Второе число: "))
+while y%1 != 0 or y < 0: y = float(input("Число должно быть целое и неотрицательное! Повторите попытку: "))
 
 def sum_(x, y):
     if y == 0:
-        print(f"Сумма ваших чисел равна: {int(x)}")
-        return
-    x += 1
-    y -= 1
-    sum_(x, y)
+        return print(f"Сумма ваших чисел равна: {int(x)}")
+    return sum_(x + 1, y - 1)
 
-
-sum_(X, Y)
+sum_(x, y)
