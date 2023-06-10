@@ -20,3 +20,24 @@ def flat(arr):
 
 print(flat([1, [2, 3], [[2], 5], 6]))
 print(flat([[[[9]]], [1, 2], [[8]]]))
+
+
+import random
+
+# first_m = [random.randint(1, 20) for i in range(int(input('Введите длину первого массива: ')))]
+# second_m = [random.randint(1, 20) for i in range(int(input('Введите длину второго массива: ')))]
+# print(first_m)
+# print(second_m)
+# print([el for el in first_m if el not in second_m])
+
+def sum_delit(x):
+    s = 0
+    for i in range(1, x):
+        if x % i == 0:
+            s += i
+    return s
+
+k = int(input("Введите число: "))
+for i in range(1, k + 1):
+    if i == sum_delit(sum_delit(i)) and i != sum_delit(i) and i < sum_delit(i):
+        print(f"{i} {sum_delit(i)}")
